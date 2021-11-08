@@ -34,7 +34,7 @@ class screenshotwindow:
         self.master.focus_force()
         self.topm = StringVar()
         self.topm.set("Click on the photo to make a blurring rectangle")
-        self.blurtwindow()
+        self.blurringcanvas()
         self.buttons()
     def buttons(self):
         self.clear = Button(master=self.master, command=self.clear, text="Clear all blurring rectangles")
@@ -69,7 +69,7 @@ class screenshotwindow:
             self.cords[1] = (event.x, event.y)
             self.t = self.canv.create_rectangle(self.cords[0][0],self.cords[0][1], self.cords[1][0], self.cords[1][1], fill="black")
             self.draw.rectangle([(self.cords[0][0] * 1.3, self.cords[0][1] * 1.3), (self.cords[1][0] * 1.3, self.cords[1][1] * 1.3)], fill=(0,0,0))
-    def blurtwindow(self):
+    def blurringcanvas(self):
         self.master.focus_force()
         self.info = Label(self.master, text = "Click on the photo to make a blurring rectangle", font=("Arial", 25))
         self.info.pack(side=TOP)
