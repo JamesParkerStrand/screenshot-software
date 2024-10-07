@@ -14,16 +14,13 @@ class notification:
         self.info = Label(self.master, text="Press 'Alt' on keyboard to take a screenshot!", font=("Arial", 25))
         self.info.pack()
     def infoscreenshot(self):
-        def key_detect():
-            while True:
-                if keyboard.is_pressed("Alt"):
-                    self.master.withdraw()
-                    time.sleep(0.5)
-                    root = Tk()
-                    screenshotwindow(root)
-                    root.mainloop()
-                    break
-        threading.Thread(target=key_detect).start()
+        if keyboard.is_pressed("Alt"):
+            self.master.withdraw()
+            time.sleep(0.5)
+            root = Tk()
+            screenshotwindow(root)
+            root.mainloop()
+        self.master.after(1,self.infoscreenshot)
 
 class screenshotwindow:
     def __init__(self, master):
