@@ -1,3 +1,3 @@
 # screenshot-software
 
-Requires pyautogui, threading, time, keyboard, PIL and tkinter
+Requires pyautogui, time, keyboard, PIL and tkinter
